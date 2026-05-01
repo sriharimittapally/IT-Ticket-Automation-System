@@ -1,7 +1,7 @@
 import requests
-from config.settings import SERVICENOW_USER, SERVICENOW_PASSWORD
+from config.settings import SERVICENOW_URL, SERVICENOW_USER, SERVICENOW_PASSWORD
 
-BASE_URL = "https://dev373898.service-now.com"
+BASE_URL = SERVICENOW_URL
 
 def create_servicenow_ticket(issue):
     url = f"{BASE_URL}/api/now/table/incident"
