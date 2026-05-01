@@ -14,7 +14,7 @@ def create_servicenow_ticket(issue):
     data = {
         "short_description": issue,
         "description": issue,
-        "caller_id": "admin"
+        "caller_id": SERVICENOW_USER
     }
 
     response = requests.post(
@@ -42,7 +42,7 @@ def update_servicenow_ticket(sys_id, status):
 
     response = requests.put(
         url,
-        auth=("admin", "1@j/xVFB0Sej"),
+         auth=(SERVICENOW_USER, SERVICENOW_PASSWORD),
         headers={"Content-Type": "application/json"},
         json=data
     )
